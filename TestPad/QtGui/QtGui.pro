@@ -31,6 +31,8 @@ unix:!macx: LIBS += -L$$OUT_PWD/../TestPadLib/ -lTestPadLib
 INCLUDEPATH += $$PWD/../TestPadLib
 DEPENDPATH += $$PWD/../TestPadLib
 
+INCLUDEPATH += "../../spdlog/include/"
+
 unix:!macx: PRE_TARGETDEPS += $$OUT_PWD/../TestPadLib/libTestPadLib.a
 
 APP_VERSION = 0.0.0.4

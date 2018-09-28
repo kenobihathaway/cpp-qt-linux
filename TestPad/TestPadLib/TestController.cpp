@@ -1,14 +1,17 @@
 #include "TestController.h"
 #include "Derived.h"
 
-
-TestController::TestController(QObject *parent) : QObject(parent)
+TestController::TestController(std::shared_ptr<spdlog::logger> console_, QObject *parent) : QObject(parent)
 {
+    console = console_;
 
 }
 
 void TestController::run()
 {
+    // create color multi threaded logger
+    console->info("TestController::run started.");
+
     Derived derived;
     derived.method1();
 
@@ -20,5 +23,7 @@ void TestController::run()
 
     ITestable* test3 = TestFactory::createTest("Fizzbuzz");
     test3->run();
+
+    console->info("TestController::run finished.");
 }
 

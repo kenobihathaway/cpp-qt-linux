@@ -7,12 +7,17 @@
 
 #include "TestFactory.h"
 
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
+
 class TestController : public QObject
 {
     Q_OBJECT
 public:
-    explicit TestController(QObject *parent = 0);
+    explicit TestController(std::shared_ptr<spdlog::logger> console_, QObject *parent = nullptr);
     void run();
+private:
+    std::shared_ptr<spdlog::logger> console;
 
 signals:
 

@@ -6,6 +6,9 @@
 
 #include "TestClass.h"
 
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -38,6 +41,7 @@ private:
     Ui::MainWindow *ui;
     void testptr(TestClass*);
     void testptr2(TestClass*);
+    std::shared_ptr<spdlog::logger> console;
 };
 
 #endif // MAINWINDOW_H

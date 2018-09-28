@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QCoreApplication::setApplicationVersion(QString(APP_VERSION));
     setWindowTitle("TestPad " + QCoreApplication::applicationVersion());
+    console = spdlog::stdout_color_mt("console");
 }
 
 MainWindow::~MainWindow()
@@ -28,7 +29,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_test_clicked()
 {
     ui->textEdit->append("Test");
-    TestController controller;
+    TestController controller(console);
     controller.run();
 }
 
@@ -61,6 +62,6 @@ void MainWindow::on_pushButton_test2_clicked()
 void MainWindow::on_pushButton_clicked()
 {
     ui->textEdit->append("Test");
-    TestController controller;
+    TestController controller(console);
     controller.run();
 }

@@ -8,7 +8,7 @@ class CommonTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit CommonTest(QObject *parent = 0);
+    explicit CommonTest(QObject *parent = nullptr);
 
 signals:
 

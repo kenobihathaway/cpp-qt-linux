@@ -11,6 +11,8 @@ TEMPLATE = lib
 CONFIG += staticlib
 CONFIG += c++14
 
+INCLUDEPATH += "../../spdlog/include/"
+
 SOURCES += \
     TestController.cpp \
     TestFactory.cpp \
