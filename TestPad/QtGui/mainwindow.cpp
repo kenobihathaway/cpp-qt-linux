@@ -24,13 +24,14 @@ MainWindow::MainWindow(QWidget *parent) :
     console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
     file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("TestPad.log", true);
     file_sink->set_level(spdlog::level::trace);
-    multiLogger = new spdlog::logger("MainLogger", {console_sink, file_sink});
+    //multiLogger = std::make_shared<spdlog::logger>("MainLogger", {file_sink, console_sink}); // this doesn't work
+    sinksList = {file_sink, console_sink};
+    multiLogger = std::make_shared<spdlog::logger>("MainLogger", sinksList);
     multiLogger->flush_on(spdlog::level::info);
 }
 
 MainWindow::~MainWindow()
 {
-    delete multiLogger;
     delete ui;
 }
 

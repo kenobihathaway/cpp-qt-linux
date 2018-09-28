@@ -1,7 +1,7 @@
 #include "TestController.h"
 #include "Derived.h"
 
-TestController::TestController(spdlog::logger* multiLogger, QObject *parent) : QObject(parent)
+TestController::TestController(std::shared_ptr<spdlog::logger> multiLogger, QObject *parent) : QObject(parent)
 {
     m_logger = multiLogger;
 

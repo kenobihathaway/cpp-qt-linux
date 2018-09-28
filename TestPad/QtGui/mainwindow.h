@@ -43,7 +43,8 @@ private:
     void testptr2(TestClass*);
     std::shared_ptr<spdlog::sinks::sink> console_sink;
     std::shared_ptr<spdlog::sinks::sink> file_sink;
-    spdlog::logger* multiLogger;
+    std::shared_ptr<spdlog::logger> multiLogger;
+    spdlog::sinks_init_list sinksList;
 };
 
 #endif // MAINWINDOW_H

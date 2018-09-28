@@ -15,10 +15,10 @@ class TestController : public QObject
 {
     Q_OBJECT
 public:
-    explicit TestController(spdlog::logger* console_, QObject *parent = nullptr);
+    explicit TestController(std::shared_ptr<spdlog::logger> multiLogger, QObject *parent = nullptr);
     void run();
 private:
-    spdlog::logger* m_logger;
+    std::shared_ptr<spdlog::logger> m_logger;
 
 signals:
 
