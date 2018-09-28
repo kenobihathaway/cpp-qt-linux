@@ -41,7 +41,9 @@ private:
     Ui::MainWindow *ui;
     void testptr(TestClass*);
     void testptr2(TestClass*);
-    std::shared_ptr<spdlog::logger> console;
+    std::shared_ptr<spdlog::sinks::sink> console_sink;
+    std::shared_ptr<spdlog::sinks::sink> file_sink;
+    spdlog::logger* multiLogger;
 };
 
 #endif // MAINWINDOW_H

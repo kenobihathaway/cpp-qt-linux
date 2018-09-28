@@ -9,15 +9,16 @@
 
 #include "spdlog/spdlog.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/sinks/basic_file_sink.h"
 
 class TestController : public QObject
 {
     Q_OBJECT
 public:
-    explicit TestController(std::shared_ptr<spdlog::logger> console_, QObject *parent = nullptr);
+    explicit TestController(spdlog::logger* console_, QObject *parent = nullptr);
     void run();
 private:
-    std::shared_ptr<spdlog::logger> console;
+    spdlog::logger* console;
 
 signals:
 
