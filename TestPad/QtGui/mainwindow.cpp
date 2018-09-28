@@ -22,9 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Setup console and file sink for a multi logger.
     console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
-    file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("multisink.txt", true);
+    file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("TestPad.log", true);
     file_sink->set_level(spdlog::level::trace);
-    multiLogger = new spdlog::logger("multi_sink", {console_sink, file_sink});
+    multiLogger = new spdlog::logger("MainLogger", {console_sink, file_sink});
     multiLogger->flush_on(spdlog::level::info);
 }
 
