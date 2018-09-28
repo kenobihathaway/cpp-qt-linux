@@ -19,14 +19,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     QCoreApplication::setApplicationVersion(QString(APP_VERSION));
     setWindowTitle("TestPad " + QCoreApplication::applicationVersion());
-    console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
 
+    // Setup console and file sink for a multi logger.
+    console_sink = std::make_shared<spdlog::sinks::stdout_color_sink_mt>();
     file_sink = std::make_shared<spdlog::sinks::basic_file_sink_mt>("multisink.txt", true);
     file_sink->set_level(spdlog::level::trace);
-
     multiLogger = new spdlog::logger("multi_sink", {console_sink, file_sink});
-    multiLogger->set_level(spdlog::level::debug);
-    multiLogger->warn("this should appear in both console and file");
+    multiLogger->flush_on(spdlog::level::info);
 }
 
 MainWindow::~MainWindow()

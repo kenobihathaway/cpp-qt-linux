@@ -18,7 +18,7 @@ public:
     explicit TestController(spdlog::logger* console_, QObject *parent = nullptr);
     void run();
 private:
-    spdlog::logger* console;
+    spdlog::logger* m_logger;
 
 signals:
 
