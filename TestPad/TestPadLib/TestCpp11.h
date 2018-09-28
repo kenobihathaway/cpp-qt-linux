@@ -19,6 +19,8 @@ public:
 private:
     bool lambdaTest();
     bool moduloTest();
+    bool testAuto();
+    bool testSharedPointer();
 
 signals:
 

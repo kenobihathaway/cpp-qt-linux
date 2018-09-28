@@ -33,6 +33,7 @@ int TestPointer::testptr3()
 //#include <iostream>
 //using namespace std;
 
+    // These are the 3 warnings allowed in this project to show the hiding of lValue
     long lValue = 7;
     for( int i = 0; i < 5; i++ )
     {
@@ -48,7 +49,7 @@ int TestPointer::testptr3()
 long TestPointer::f( long p_lParameter )
 {
     long *s;
-    s = 0;
+    s = nullptr;
     s = new long;
     *s += p_lParameter;
     return (*s);

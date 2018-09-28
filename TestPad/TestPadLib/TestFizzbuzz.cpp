@@ -22,6 +22,8 @@ bool TestFizzbuzz::run()
 
          std::cout << "\n";
     }
+
+    return true;
 }
 
 std::vector<ulong> TestFizzbuzz::generateFibonaci()
@@ -33,8 +35,8 @@ std::vector<ulong> TestFizzbuzz::generateFibonaci()
 
     while (fibList.size() < 50)
     {
-        long num1 = fibList[fibList.size() - 1];
-        long num2 = fibList[fibList.size() - 2];
+        ulong num1 = fibList[fibList.size() - 1];
+        ulong num2 = fibList[fibList.size() - 2];
         fibList.push_back(num1 + num2);
     }
 

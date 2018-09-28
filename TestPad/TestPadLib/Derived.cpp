@@ -10,3 +10,8 @@ void Derived::method2()
 {
     qDebug() << "Derived::method2()";
 }
+
+Derived::~Derived()
+{
+
+}

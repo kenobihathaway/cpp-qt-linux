@@ -1,4 +1,9 @@
+
+
 #include "TestCpp11.h"
+#include "Derived.h"
+
+#include <memory>
 
 TestCpp11::TestCpp11(ITestable*)
 {
@@ -11,6 +16,8 @@ bool TestCpp11::run()
     std::cout << "TestCpp11" << "\n";
     lambdaTest();
     moduloTest();
+    testAuto();
+    testSharedPointer();
     return true;
 }
 
@@ -36,4 +43,23 @@ bool TestCpp11::moduloTest()
     }
 
     return true;
+}
+
+bool TestCpp11::testAuto()
+{
+    auto x = 1;
+    std::cout << x;
+
+    return x == 1;
+}
+
+bool TestCpp11::testSharedPointer()
+{
+    std::shared_ptr<Derived> derived(new Derived());
+    derived->method2();
+
+    std::shared_ptr<Derived> derived2 = std::make_shared<Derived>();
+    derived2->method2();
+    return true;
+
 }
