@@ -12,7 +12,7 @@ class TestFactory : public QObject
     Q_OBJECT
 public:
     explicit TestFactory(QObject *parent = 0);
-    static ITestable* createTest(std::string name);
+    static ITestable* createTest(std::shared_ptr<spdlog::logger> pLogger, std::string name);
 
 signals:
 

@@ -5,14 +5,15 @@
 
 #include <memory>
 
-TestCpp11::TestCpp11(ITestable*)
+TestCpp11::TestCpp11(std::shared_ptr<spdlog::logger> pLogger, ITestable*)
 {
-
+    this->m_loggerPtr = pLogger;
 }
 
 
 bool TestCpp11::run()
-{
+{    
+    m_loggerPtr->info(Q_FUNC_INFO);
     std::cout << "TestCpp11" << "\n";
     lambdaTest();
     moduloTest();

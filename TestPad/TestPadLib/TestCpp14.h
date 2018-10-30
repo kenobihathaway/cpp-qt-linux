@@ -14,7 +14,7 @@ class TestCpp14 : public ITestable, QObject
 {
 
 public:
-    explicit TestCpp14(ITestable *parent = 0);
+    explicit TestCpp14(std::shared_ptr<spdlog::logger> pLogger, ITestable *parent = 0);
     bool run();
 
 signals:

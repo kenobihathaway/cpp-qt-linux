@@ -11,7 +11,7 @@ class TestFizzbuzz : public ITestable, QObject
 {
 
 public:
-    explicit TestFizzbuzz(QObject *parent = nullptr);
+    explicit TestFizzbuzz(std::shared_ptr<spdlog::logger> pLogger, QObject *parent = nullptr);
     bool run();
     std::vector<ulong> generateFibonaci();
 

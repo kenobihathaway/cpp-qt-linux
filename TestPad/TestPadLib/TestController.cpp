@@ -15,13 +15,13 @@ void TestController::run()
     Derived derived;
     derived.method1();
 
-    ITestable* test = TestFactory::createTest("Cpp14");
+    ITestable* test = TestFactory::createTest(m_logger, "Cpp14");
     test->run();
 
-    ITestable* test2 = TestFactory::createTest("Cpp11");
+    ITestable* test2 = TestFactory::createTest(m_logger, "Cpp11");
     test2->run();
 
-    ITestable* test3 = TestFactory::createTest("Fizzbuzz");
+    ITestable* test3 = TestFactory::createTest(m_logger, "Fizzbuzz");
     test3->run();
 
     m_logger->info("TestController::run finished.");

@@ -14,7 +14,7 @@ class TestCpp11 : public ITestable, QObject
 {
 
 public:
-    explicit TestCpp11(ITestable *parent = 0);
+    explicit TestCpp11(std::shared_ptr<spdlog::logger> pLogger, ITestable *parent = 0);
     bool run();
 private:
     bool lambdaTest();

@@ -1,13 +1,14 @@
 #include "TestFizzbuzz.h"
 
-TestFizzbuzz::TestFizzbuzz(QObject *parent) : QObject(parent)
+TestFizzbuzz::TestFizzbuzz(std::shared_ptr<spdlog::logger> pLogger, QObject *parent) : QObject(parent)
 {
-
+    this->m_loggerPtr = pLogger;
 }
 
 
 bool TestFizzbuzz::run()
 {
+    m_loggerPtr->info(Q_FUNC_INFO);
     std::cout << "TestFizzbuzz" << "\n";
     std::vector<ulong> sequence = generateFibonaci();
 
