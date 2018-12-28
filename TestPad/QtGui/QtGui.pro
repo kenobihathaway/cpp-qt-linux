@@ -12,7 +12,7 @@ TARGET = QtGui
 TEMPLATE = app
 
 CONFIG += debug
-CONFIG += C++14
+CONFIG += c++14
 
 
 SOURCES += main.cpp\
