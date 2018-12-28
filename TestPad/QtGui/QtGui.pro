@@ -36,5 +36,5 @@ INCLUDEPATH += "../../spdlog/include/"
 
 unix:!macx: PRE_TARGETDEPS += $$OUT_PWD/../TestPadLib/libTestPadLib.a
 
-APP_VERSION = 0.0.0.4
+APP_VERSION = 0.0.0.5
 DEFINES += APP_VERSION=\\\"$$APP_VERSION\\\"
